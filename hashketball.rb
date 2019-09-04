@@ -283,3 +283,33 @@ end
 end
 return who
 end
+
+
+def winning_team
+hash = game_hash
+home = 0
+away = 0
+hash.each do |location, data|
+  data.each do |key, value|
+    if key == :players
+      value.each do |name_hash|
+        name_hash.each do |name, stats|
+          stats.each do |info, num|
+        if location == :away && info == :points
+          away += num
+        end
+        if location == :home && info == :points
+          home += num
+        end
+      end
+    end
+  end
+end
+end
+end
+if home > away
+  return hash[:home][:team_name]
+else
+  return hash[:away][:team_name]
+end
+end
