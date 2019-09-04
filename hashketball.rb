@@ -313,3 +313,24 @@ else
   return hash[:away][:team_name]
 end
 end
+
+
+def player_with_longest_name
+  hash = game_hash
+  longest = ""
+  hash.each do |location, data|
+    data.each do |k, v|
+    if k == :players
+    v.each do |player_hash|
+      player_hash.each do |name, stats|
+        if name.length > longest.length
+          longest = name
+
+        end
+          end
+        end
+      end
+    end
+  end
+  return longest
+end
