@@ -260,3 +260,26 @@ def big_shoe_rebounds
 end
 
 #I will be working on the bonus questions and resumbitting this.
+
+def most_points_scored
+hash = game_hash
+points = 0
+who = ""
+hash.each do |location, data|
+  data.each do |k, v|
+  if k == :players
+  v.each do |player_hash|
+    player_hash.each do |name, stats|
+      stats.each do |a, b|
+        if a == :points && points < b
+          points = b
+          who = name
+      end
+       end
+        end
+      end
+end
+end
+end
+return who
+end
