@@ -337,7 +337,7 @@ end
 
 
 
-def long_name_steals_a_ton
+def long_name_steals_a_ton?
   hash = game_hash
   longest = ""
   most_steals = 0
